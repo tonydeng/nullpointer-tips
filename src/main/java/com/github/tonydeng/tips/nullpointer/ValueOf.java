@@ -10,11 +10,16 @@ package com.github.tonydeng.tips.nullpointer;
  */
 public class ValueOf {
 
-    public String useValueOf(Integer i) {
-        return String.valueOf(i);
+    public String useValueOf(Object o) {
+        return String.valueOf(o);
     }
 
-    public String useToString(Integer i) {
-        return i.toString();
+    public String useToString(Object o) {
+        try{
+            return o.toString();
+        }catch (NullPointerException e){
+
+        }
+        return null;
     }
 }
