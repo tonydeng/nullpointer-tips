@@ -39,4 +39,10 @@ public class ValueOfTest {
         Long l = null;
         assertNull("use to string is null", valueOf.useToString(l));
     }
+
+    @Test
+    public void testNullPointerException(){
+        Object o = null;
+        String s = (String) o;
+    }
 }

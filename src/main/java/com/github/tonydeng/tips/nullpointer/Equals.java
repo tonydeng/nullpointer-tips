@@ -1,28 +1,27 @@
 package com.github.tonydeng.tips.nullpointer;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by tonydeng on 15/3/10.
  */
 public class Equals {
+    private static final Logger log = LoggerFactory.getLogger(Equals.class);
     public void unknown(){
         Object unknownObject = null;
 
         if(unknownObject.equals("knownObject")){
-            System.out.println("This may reslut in NullPointerException if unknownObject is null");
+            log.info("This may reslut in NullPointerException if unknownObject is null");
         }
     }
 
     public void known(){
         Object unknownObject = null;
         if("knownObject".equals(unknownObject)){
-            System.out.println("better coding avoided NullPointerException");
+            log.info("better coding avoided NullPointerException");
         }
     }
 
-    public static void main(String[] args){
-        Equals e =new Equals();
-//        e.unknown();
-        e.known();
-    }
 }
