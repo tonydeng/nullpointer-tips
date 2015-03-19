@@ -1,5 +1,7 @@
 package com.github.tonydeng.tips.nullpointer;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.MapUtils;
 import org.junit.Test;
 
 import java.util.Map;
@@ -31,6 +33,7 @@ public class CollectionTest extends BaseTest{
     public void testGetNullMap(){
         assertNull((collection.getNullMap()));
         log.info("null map:'{}'",collection.getNullMap());
+        MapUtils.isNotEmpty(collection.getNullMap());
     }
 
     @Test
@@ -42,4 +45,5 @@ public class CollectionTest extends BaseTest{
             log.info("key:{},value:{}",key,emptyMap.get(key));
         }
     }
+
 }
